@@ -1,1 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Random Color Generator</title>
+    <style type="text/css">
+      html, body {
+        margin: 0;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+  
+  </body>
+  
+  <script>
+    const ColorSet = [
+      "rgb(243, 28, 27)",
+      "rgb(254, 230, 52)",
+      "rgb(25, 121, 243)",
+      "rgb(28 , 175, 54)",
+      "rgb(0, 0, 0)",
+      "rgb(255, 255, 255)",
+      "rgb(252, 55, 211)",
+      "rgb(144, 140, 144)",
+      "rgb(252, 95, 32)",
+      "rgb(225, 180, 73)",
+      "rgb(142, 27, 131)",
+    ];
 
+    document.addEventListener("click", () => {
+      const randomIndex = Math.floor(Math.random(1) * ColorSet.length) - 1;
+      const pickedColor = ColorSet[randomIndex];
+      document.body.style.backgroundColor = pickedColor;
+    });
+    
+  </script>
+</html>
