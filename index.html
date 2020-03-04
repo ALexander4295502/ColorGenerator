@@ -16,12 +16,12 @@
   
   <script>
     const ColorSet = [
+      "rgb(255, 255, 255)",
       "rgb(243, 28, 27)",
       "rgb(254, 230, 52)",
       "rgb(25, 121, 243)",
       "rgb(28 , 175, 54)",
       "rgb(0, 0, 0)",
-      "rgb(255, 255, 255)",
       "rgb(252, 55, 211)",
       "rgb(144, 140, 144)",
       "rgb(252, 95, 32)",
@@ -29,10 +29,18 @@
       "rgb(142, 27, 131)",
     ];
 
+    let prevRandomIndex = 0;
+
     const changeColorHelper = () => {
-      const randomIndex = Math.floor(Math.random(1) * ColorSet.length) - 1;
+      let randomIndex = prevRandomIndex;
+
+      while(randomIndex === prevRandomIndex) {
+        randomIndex = Math.floor(Math.random(1) * ColorSet.length) - 1;
+      }
+
       const pickedColor = ColorSet[randomIndex];
       document.body.style.backgroundColor = pickedColor;
+      prevRandomIndex = randomIndex;
     };
 
     document.addEventListener("click", changeColorHelper);
