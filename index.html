@@ -29,10 +29,17 @@
       "rgb(142, 27, 131)",
     ];
 
-    document.addEventListener("click", () => {
+    const changeColorHelper = () => {
       const randomIndex = Math.floor(Math.random(1) * ColorSet.length) - 1;
       const pickedColor = ColorSet[randomIndex];
       document.body.style.backgroundColor = pickedColor;
+    };
+
+    document.addEventListener("click", changeColorHelper);
+    document.addEventListener("keydown", (e) => {
+      if(e.keyCode === 13) {
+        changeColorHelper();
+      }
     });
     
   </script>
